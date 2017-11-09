@@ -37,6 +37,17 @@
     "isDefault" : true,
     "controller" : "File"
   },
+  "goToPage_cvbnm" : {
+    "_id" : "wm-goToPage_cvbnm-wm.NavigationVariable-1510216264656",
+    "name" : "goToPage_cvbnm",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "cvbnm",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
