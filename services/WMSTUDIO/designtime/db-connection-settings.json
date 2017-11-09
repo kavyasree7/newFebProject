@@ -1,0 +1,229 @@
+{
+  "username" : "anithadb",
+  "password" : "7b6a43524a2423137f6466781d5c783a172653",
+  "url" : "jdbc:oracle:thin:@//54.189.37.152:1521/WMSTUDIO",
+  "driverClass" : "oracle.jdbc.driver.OracleDriver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.OracleDialect",
+  "serviceId" : "WMSTUDIO",
+  "packageName" : "com.newfebproject.wmstudio",
+  "dbType" : "Oracle",
+  "host" : "54.189.37.152",
+  "dbName" : "WMSTUDIO",
+  "port" : "1521",
+  "schemaName" : "ANITHADB",
+  "tableFilter" : [ {
+    "table" : "ALL TYPES",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "ALLTYPES_2",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "BIGINTEGER SEQUENCE",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "BoolIssue",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "Boolean_DefaultValues",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "BooleanTable_NullConstraints",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "CALL_ROUTING",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "CALLROUTING",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "CFG_SKILL",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "CFG_SKILL1",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "Check Constraint table",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "COMP CHILD",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "COMP O2O C",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "COMP O2O P",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "COMPPARENT",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "COUNTRIES",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "CROSSJOIN_VIEW",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "CurrentProperties",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "DEPARTMENTS",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "EMP_DETAILS_VIEW",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "EMPLOYEE1",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "EMPLOYEE2",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "EMPLOYEE_DEPARTMENT_VIEW",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "EMPLOYEES",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "INTEGER SEQUENCE",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "ISSUWWITHFLOAT",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "JOB_HISTORY",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "JOBS",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "JOINING DETAILS",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "LOCATIONS",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "MANDATORYCOLUMN_VIEW",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "NOPRECISION",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "OTHER TYPES",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "REGIONS",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "SALARY DETAILS",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "SCENARIO1",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "Sequence",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "serverdefined i",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "serverdefined iu",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "serverdefined u",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "SHORT SEQUENCE",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "SKILL",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "TABLE3",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "TABLE5",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "TABLE7",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "TABLE8BIG123",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "TABLE9",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "TABLEWITHOUTPK",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "TestBigInteger",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "TESTBIGDECTAB",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "UD Both IU WithOut Values",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "UD BothIU With Values",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "UD_IF_UT Null WithOut Values",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "UD_IF_UT Null With Values",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "UD Insertable WithOut Values",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "UD Insertable With Values",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "UD_IT_UF NoNull WithOut Values",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "UD_IT_UF NoNull With Values",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "UD Updatable WithOut Values",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "UD Updatable With Values",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "user details",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "USERS",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "VirtualO2O_Child",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "VirtualO2O_Parent",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "VirtualO2O_Parent1",
+    "schema" : "ANITHADB"
+  }, {
+    "table" : "WITHOUTPK2",
+    "schema" : "ANITHADB"
+  } ],
+  "schemaFilter" : [ "ANITHADB" ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : true,
+    "reason" : "MIGRATION_FAILED",
+    "message" : "Source code re-generation needed with respect to spring upgrade"
+  },
+  "readOnly" : false
+}

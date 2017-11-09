@@ -1,0 +1,184 @@
+{
+  "username" : "postgres",
+  "password" : "7b6a43524a322c0c6e6166771a1378700d662158",
+  "url" : "jdbc:postgresql://ec2-54-87-2-36.compute-1.amazonaws.com:5432/viewsdb",
+  "driverClass" : "org.postgresql.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.WMPostgresSQLDialect",
+  "serviceId" : "viewsdb",
+  "packageName" : "com.newfebproject.viewsdb",
+  "dbType" : "PostgreSQL",
+  "host" : "ec2-54-87-2-36.compute-1.amazonaws.com",
+  "dbName" : "viewsdb",
+  "port" : "5432",
+  "schemaName" : "public",
+  "tableFilter" : [ {
+    "table" : "all types",
+    "schema" : "public"
+  }, {
+    "table" : "alltypes table",
+    "schema" : "public"
+  }, {
+    "table" : "alltypeswithdefaults",
+    "schema" : "public"
+  }, {
+    "table" : "BoolIssue",
+    "schema" : "public"
+  }, {
+    "table" : "BooleanTestCase",
+    "schema" : "public"
+  }, {
+    "table" : "Boolean_TestCases",
+    "schema" : "public"
+  }, {
+    "table" : "Booleantest_delete",
+    "schema" : "public"
+  }, {
+    "table" : "DateTimeTypes",
+    "schema" : "public"
+  }, {
+    "table" : "Datetime Type",
+    "schema" : "public"
+  }, {
+    "table" : "newTable",
+    "schema" : "newschema"
+  }, {
+    "table" : "newTable1",
+    "schema" : "securityview"
+  }, {
+    "table" : "NOPK1",
+    "schema" : "public"
+  }, {
+    "table" : "NOPK2",
+    "schema" : "public"
+  }, {
+    "table" : "NOPK3",
+    "schema" : "public"
+  }, {
+    "table" : "nullrecordsview",
+    "schema" : "public"
+  }, {
+    "table" : "number223",
+    "schema" : "public"
+  }, {
+    "table" : "number_table",
+    "schema" : "public"
+  }, {
+    "table" : "Number_view",
+    "schema" : "public"
+  }, {
+    "table" : "Numberviews1",
+    "schema" : "public"
+  }, {
+    "table" : "NumericView",
+    "schema" : "public"
+  }, {
+    "table" : "sample_table",
+    "schema" : "public"
+  }, {
+    "table" : "sample_virtualtable",
+    "schema" : "public"
+  }, {
+    "table" : "SecurityView",
+    "schema" : "securityview"
+  }, {
+    "table" : "TABLE129",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE133",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE17",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE18",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE18511",
+    "schema" : "public"
+  }, {
+    "table" : "Table2",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE26",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE278",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE3",
+    "schema" : "securityview"
+  }, {
+    "table" : "TABLE35",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE37",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE39",
+    "schema" : "newschema"
+  }, {
+    "table" : "TABLE4",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE44",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE45",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE46",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE51",
+    "schema" : "public"
+  }, {
+    "table" : "TABLE749",
+    "schema" : "public"
+  }, {
+    "table" : "TABLEUpdate",
+    "schema" : "public"
+  }, {
+    "table" : "Test",
+    "schema" : "public"
+  }, {
+    "table" : "TestUpdate",
+    "schema" : "public"
+  }, {
+    "table" : "testnumbertypes",
+    "schema" : "public"
+  }, {
+    "table" : "UserDetails_OnlyUsername",
+    "schema" : "securityview"
+  }, {
+    "table" : "userdetails",
+    "schema" : "public"
+  }, {
+    "table" : "users",
+    "schema" : "public"
+  }, {
+    "table" : "Users_OnlyUserId",
+    "schema" : "securityview"
+  }, {
+    "table" : "UsersStringID",
+    "schema" : "securityview"
+  }, {
+    "table" : "usersinteger",
+    "schema" : "public"
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : true,
+    "reason" : "MIGRATION_FAILED",
+    "message" : "Source code re-generation needed with respect to spring upgrade"
+  },
+  "readOnly" : false
+}

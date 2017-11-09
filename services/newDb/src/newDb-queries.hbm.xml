@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="newTestQuery">
+        <![CDATA[
+        select * from TABLE1 where COLUMN2 = :__SERVER__USER_ID__USER_ID
+        ]]>
+    </sql-query>
+
+    <sql-query name="newTestQuery__count">
+        <![CDATA[
+        select count(*) from (select * from TABLE1 where COLUMN2 = :__SERVER__USER_ID__USER_ID) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="newQuery">
+        <![CDATA[
+        select * from TABLE1 where COLUMN2 IN (:name)
+        ]]>
+    <query-param name="name" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="newQuery__count">
+        <![CDATA[
+        select count(*) from (select * from TABLE1 where COLUMN2 IN (:name)) wmTempTable
+        ]]>
+    <query-param name="name" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>

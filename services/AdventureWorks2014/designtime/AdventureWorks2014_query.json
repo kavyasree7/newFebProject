@@ -1,0 +1,136 @@
+{
+  "newLineQuery" : {
+    "name" : "newLineQuery",
+    "description" : "desc",
+    "version" : "V2",
+    "queryString" : "select \n*\nfrom\nEmployee\nwhere\nEmpId\nIN\n(\nselect\nEmpId\nfrom\nEmployee\nwhere\nSalary\n=\n12\n)",
+    "countQueryString" : "select count(*) from (select \n*\nfrom\nEmployee\nwhere\nEmpId\nIN\n(\nselect\nEmpId\nfrom\nEmployee\nwhere\nSalary\n=\n12\n)) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.newfebproject.adventureworks2014.models.query.NewLineQueryResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "EmpId",
+        "fieldName" : "empId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "FirstName",
+        "fieldName" : "firstName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "LastName",
+        "fieldName" : "lastName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "Salary",
+        "fieldName" : "salary",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "Address",
+        "fieldName" : "address",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "newQuery" : {
+    "name" : "newQuery",
+    "description" : "desc",
+    "version" : "V2",
+    "queryString" : "select \n*\nfrom\nEmployee\nwhere EmpId IN (\nselect\nEmpId\nfrom Employee where Salary =12)",
+    "countQueryString" : "select count(*) from (select \n*\nfrom\nEmployee\nwhere EmpId IN (\nselect\nEmpId\nfrom Employee where Salary =12)) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.newfebproject.adventureworks2014.models.query.NewQueryResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "EmpId",
+        "fieldName" : "empId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "FirstName",
+        "fieldName" : "firstName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "LastName",
+        "fieldName" : "lastName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "Salary",
+        "fieldName" : "salary",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "Address",
+        "fieldName" : "address",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}

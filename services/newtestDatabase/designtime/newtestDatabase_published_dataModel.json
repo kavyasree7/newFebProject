@@ -1,0 +1,81 @@
+{
+  "description" : "newtestDatabase",
+  "draft" : false,
+  "name" : "newtestDatabase",
+  "packageName" : "com.newfebproject.newtestdatabase",
+  "tables" : [ {
+    "catalog" : "newtestDatabase",
+    "columns" : [ {
+      "columnValue" : {
+        "type" : "user-defined",
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : ""
+      },
+      "fieldName" : "id",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "ID",
+      "nullable" : false,
+      "oldName" : "ID",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "type" : "user-defined",
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : ""
+      },
+      "fieldName" : "column2",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "COLUMN2",
+      "nullable" : true,
+      "oldName" : "COLUMN2",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    } ],
+    "constraints" : [ ],
+    "entityName" : "Table1",
+    "fullyQualifiedName" : "com.newfebproject.newtestdatabase.Table1",
+    "name" : "TABLE1",
+    "oldName" : "TABLE1",
+    "primaryKey" : {
+      "columns" : [ "ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ ],
+    "schema" : null,
+    "type" : "TABLE"
+  } ]
+}

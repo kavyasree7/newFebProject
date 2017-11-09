@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="newQuery">
+        <![CDATA[
+        select 
+*
+from
+Employee
+where EmpId IN (
+select
+EmpId
+from Employee where Salary =12)
+        ]]>
+    </sql-query>
+
+    <sql-query name="newQuery__count">
+        <![CDATA[
+        select count(*) from (select 
+*
+from
+Employee
+where EmpId IN (
+select
+EmpId
+from Employee where Salary =12)) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="newLineQuery">
+        <![CDATA[
+        select 
+*
+from
+Employee
+where
+EmpId
+IN
+(
+select
+EmpId
+from
+Employee
+where
+Salary
+=
+12
+)
+        ]]>
+    </sql-query>
+
+    <sql-query name="newLineQuery__count">
+        <![CDATA[
+        select count(*) from (select 
+*
+from
+Employee
+where
+EmpId
+IN
+(
+select
+EmpId
+from
+Employee
+where
+Salary
+=
+12
+)) wmTempTable
+        ]]>
+    </sql-query>
+</hibernate-mapping>

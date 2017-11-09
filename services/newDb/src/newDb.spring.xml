@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <context:component-scan base-package="com.newfebproject.newdb.controller,com.newfebproject.newdb.service,com.newfebproject.newdb.dao" xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"/>
+    <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>
+                    classpath:newDb.properties
+                </value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+    <bean class="com.zaxxer.hikari.HikariConfig" id="newDbHikariConfig">
+        <property name="jdbcUrl" value="${newDb.url}"/>
+        <property name="driverClassName" value="${newDb.driverClass}"/>
+        <property name="username" value="${newDb.username}"/>
+        <property name="password" value="${newDb.password}"/>
+        <property name="maximumPoolSize" value="${newDb.maxPoolSize}"/>
+        <property name="minimumIdle" value="${newDb.minPoolSize}"/>
+        <property name="connectionTimeout" value="30000"/>
+        <property name="validationTimeout" value="5000"/>
+        <property name="idleTimeout" value="600000"/>
+        <property name="maxLifetime" value="1800000"/>
+        <property name="initializationFailTimeout" value="-1"/>
+        <property name="leakDetectionThreshold" value="120000"/>
+        <property name="registerMbeans" value="false"/>
+    </bean>
+    <bean class="com.zaxxer.hikari.HikariDataSource" lazy-init="true" destroy-method="close" id="newDbWMManagedDataSource">
+        <constructor-arg ref="newDbHikariConfig"/>
+    </bean>
+    <bean class="com.wavemaker.runtime.data.interceptors.WMEntityInterceptor" id="newDbEntityInterceptor"/>
+    <bean class="com.wavemaker.runtime.data.factory.TypeResolverSessionFactoryBean" id="newDbSessionFactory">
+        <property name="dataSource" ref="newDbDataSource"/>
+        <property name="packagesToScan" value="com.newfebproject.newdb"/>
+        <property name="entityInterceptor" ref="newDbEntityInterceptor"/>
+        <property name="mappingResources">
+            <list>
+                <value>
+                newDb-queries.hbm.xml
+                </value>
+            </list>
+        </property>
+        <property name="customTypes">
+            <array value-type="com.wavemaker.runtime.data.CustomType" xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc">
+                <ref bean="dateTimeCustomType"/>
+            </array>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">
+                ${newDb.dialect}
+                </prop>
+                <prop key="hibernate.show_sql">
+                    false
+                </prop>
+                <prop key="hibernate.globally_quoted_identifiers">
+                    false
+                </prop>
+                <prop key="hibernate.hbm2ddl.auto">
+                ${newDb.hbm2ddl}
+                </prop>
+                <prop key="hibernate.temp.use_jdbc_metadata_defaults">
+                    false
+                </prop>
+                <prop key="hibernate.schema_update.unique_constraint_strategy">
+                    skip
+                </prop>
+                <prop key="hibernate.id.new_generator_mappings">
+                    true
+                </prop>
+            </props>
+        </property>
+    </bean>
+    <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" id="newDbTransactionManager">
+        <property name="sessionFactory" ref="newDbSessionFactory"/>
+        <property name="defaultTimeout" value="${newDb.transactionTimeout}"/>
+    </bean>
+    <bean class="org.springframework.orm.hibernate5.HibernateTemplate" id="newDbTemplate">
+        <property name="sessionFactory" ref="newDbSessionFactory"/>
+    </bean>
+    <bean class="com.wavemaker.runtime.data.dao.query.WMQueryExecutorImpl" id="newDbWMQueryExecutor">
+        <property name="template" ref="newDbTemplate"/>
+    </bean>
+    <bean class="com.wavemaker.runtime.data.dao.procedure.WMProcedureExecutorImpl" id="newDbWMProcedureExecutor">
+        <property name="template" ref="newDbTemplate"/>
+        <property name="serviceId" value="newDb"/>
+    </bean>
+    <bean class="com.wavemaker.commons.data.type.WMPersistentLocalDateTime" id="persistentLocalDateTimeType"/>
+    <bean class="com.wavemaker.runtime.data.CustomType" id="dateTimeCustomType">
+        <property name="type" ref="persistentLocalDateTimeType"/>
+        <property name="keys">
+            <list>
+                <value>DateTime</value>
+                <value>org.joda.time.LocalDateTime</value>
+            </list>
+        </property>
+    </bean>
+    <bean class="com.wavemaker.runtime.resolver.WMPageableHandlerMethodArgumentResolver" id="newDbPageableHandlerMethodResolver">
+        <property name="pageParameterName" value="page"/>
+        <property name="sizeParameterName" value="size"/>
+        <property name="oneIndexedParameters" value="true"/>
+        <property name="maxPageSize" value="${newDb.maxPageSize}"/>
+        <property name="fallbackPageable">
+            <bean class="org.springframework.data.domain.PageRequest">
+                <constructor-arg value="0"/>
+                <constructor-arg value="20"/>
+            </bean>
+        </property>
+    </bean>
+    <bean class="com.wavemaker.runtime.data.datasource.WMDataSource" id="newDbDataSource">
+        <property name="dataSourceType" value="${newDb.dataSourceType}"/>
+        <property name="jndiName" value="${newDb.jndiName}"/>
+        <property name="serviceId" value="newDb"/>
+    </bean>
+    <tx:annotation-driven xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"/>
+</beans>
